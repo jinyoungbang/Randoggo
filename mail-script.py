@@ -9,6 +9,7 @@ from email.message import EmailMessage
 EMAIL_ADDRESS = config.EMAIL_ADDRESS
 EMAIL_PASSWORD = config.EMAIL_PASSWORD
 GIPHY_API_KEY = config.GIPHY_API_KEY
+EMAIL_TO_SEND = config.EMAIL_TO_SEND
 
 try:
     url = "http://api.giphy.com/v1/gifs/search"
@@ -36,7 +37,7 @@ try:
     msg = EmailMessage()
     msg['Subject'] = "Your daily dosage of doggos!"
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = "jybang@bu.edu"
+    msg['To'] = EMAIL_TO_SEND
     msg.set_content("Have a great day!")
 
     header = "Your daily dosage of doggos!"
