@@ -3,6 +3,7 @@ import smtplib
 import imghdr
 import config
 import requests
+import random
 from email.message import EmailMessage
 
 EMAIL_ADDRESS = config.EMAIL_ADDRESS
@@ -12,7 +13,7 @@ GIPHY_API_KEY = config.GIPHY_API_KEY
 try:
     url = "http://api.giphy.com/v1/gifs/search"
 
-    querystring = {"api_key":GIPHY_API_KEY,"q":"dogs","rating":"g","limit":"1"}
+    querystring = {"api_key":GIPHY_API_KEY,"q":"dogs","rating":"g"}
 
     headers = {
         'User-Agent': "PostmanRuntime/7.18.0",
@@ -28,13 +29,14 @@ try:
     response = requests.request("GET", url, headers=headers, params=querystring)
     response = response.json()
 
+    num = random.randint(0, 20)
     # URL from GIPHY API
-    doggo_url = response['data'][0]['images']["fixed_width_downsampled"]["url"]
+    doggo_url = response['data'][num]['images']["fixed_width_downsampled"]["url"]
 
     msg = EmailMessage()
     msg['Subject'] = "Your daily dosage of doggos!"
     msg['From'] = EMAIL_ADDRESS
-    msg['To'] = "jybang1999@gmail.com"
+    msg['To'] = "jybang@bu.edu"
     msg.set_content("Have a great day!")
 
     header = "Your daily dosage of doggos!"
