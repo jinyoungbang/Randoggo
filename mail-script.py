@@ -365,7 +365,7 @@ html = """\
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                             <td>
-                                <p>Hi there,</p>
+                                <p>Boop!</p>
                                 <p>Here is your daily dosage of doggos!</p>
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                     <tbody>
@@ -380,8 +380,8 @@ html = """\
                                         </tr>
                                     </tbody>
                                 </table>
-                                <p>Know that you're doing such a great job!</p>
-                                <p>Have a great day :)</p>
+                                <p>Know that you're doing such a heckin amazin job!</p>
+                                <p>Have a floofin amazing day :)</p>
                             </td>
                             </tr>
                         </table>
