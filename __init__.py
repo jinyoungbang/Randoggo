@@ -36,6 +36,29 @@ def subscribe():
 def unsubscribe_home():
 	return render_template('unsubscribe.html')
 
+@app.route('/unsubscribe/result', methods=['POST'])
+def unsubscribe():
+	email = request.form['unsubscribe-email']
+	collection = db['email']
+
+	# Checks if email exists in the database and converts into boolean value
+	email_exists = collection.find(
+		{
+			"email": email
+		}
+	).count() > 0
+	
+	if email_exists:
+		delete = {
+			"email": email
+		}
+		x = collection.delete_one(delete)
+		print(x)
+		# Return should render_template with like "unsubscribing html page"
+		return email
+	else:
+		print("Email does not exist in the database")
+		return ("Email doesn't exist.")
 
 if __name__ == '__main__':
    app.run(debug=True)
