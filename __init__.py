@@ -5,13 +5,26 @@ import pymongo
 import datetime
 import ssl
 import config
+import re
 from pymongo import MongoClient
-
 
 app = Flask(__name__)
 
+# Connecting to MongoDB
 client = pymongo.MongoClient(config.MONGO_CLIENT_URL, ssl=True, ssl_cert_reqs=ssl.CERT_NONE)
+
+# Specifying the database
 db = client['email']
+
+# Regex for email validation
+regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+
+# Function for validating email
+def check(email):
+	if (re.search(regex, email)):
+		return True
+	else:
+		return False
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -20,17 +33,29 @@ def home():
 @app.route('/result', methods=['POST'])
 def subscribe():
 	email = request.form['email']
-	print(email)
+	if not check(email):
+		return ("Email invalid format.")
 	collection = db['email']
-	post = {
-		"email": email,
-		"date": datetime.datetime.utcnow()
-	}
-	x = collection.insert_one(post).inserted_id
-	print(x)
 
-	# Return should render_template with like "Thank you for subscribing html page"
-	return email
+	# Checks if email exists in the database and converts into boolean value
+	email_exists = collection.find(
+		{
+			"email": email
+		}
+	).count() > 0
+
+	if email_exists:
+		return ("You have already subscribed!")
+	else:
+		post = {
+			"email": email,
+			"date": datetime.datetime.utcnow()
+		}
+		x = collection.insert_one(post).inserted_id
+		print(x)
+
+		# Return should render_template with like "Thank you for subscribing html page"
+		return email
 
 @app.route('/unsubscribe', methods=['GET', 'POST'])
 def unsubscribe_home():
