@@ -41,6 +41,8 @@ client = pymongo.MongoClient(MONGO_CLIENT_URL, ssl=True, ssl_cert_reqs=ssl.CERT_
 db = client['email']
 collection = db['email']
 
+# Should be running forever with a specific time the email should send --> on an instance where they can handle this
+
 emails_to_send = []
 
 for c in collection.find():

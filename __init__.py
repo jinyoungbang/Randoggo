@@ -26,6 +26,7 @@ def check(email):
 	else:
 		return False
 
+# Flask routes
 @app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template('index.html')
@@ -34,7 +35,8 @@ def home():
 def subscribe():
 	email = request.form['email']
 	if not check(email):
-		return ("Email invalid format.")
+		# Return render template
+		return render_template('invalid-subscribe.html')
 	collection = db['email']
 
 	# Checks if email exists in the database and converts into boolean value
@@ -45,7 +47,7 @@ def subscribe():
 	).count() > 0
 
 	if email_exists:
-		return ("You have already subscribed!")
+		return render_template('invalid-subscribe.html')
 	else:
 		post = {
 			"email": email,
