@@ -1,9 +1,57 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Welcome!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <style>
 
-<body>
-    <h1>subscribe</h1>
-    <form action="http://localhost:5000/result" method="POST">
-        <input type="text" name="email">
-        <input type="submit">
-    </form>
-</body>
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+        </style>
+    </head>
+    <body>
+        <section class="hero is-fullheight has-background-white">
+            <div class="hero-body">
+                <div class="container">
+                    <figure class="image center">
+                        <img src="images/dog.svg" style="max-width: 128px;">
+                    </figure>
+                    <h1 class="title center">
+                        Subscribe!
+                    </h1>
+                    <div class="columns">
+                        <div class="column"></div>
+                        <div class="column">
+                            <div class="notification is-primary is-size-5">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                        </div>
+                        <div class="column"></div>
+                    </div>
+                    <div class="container center">
+                        <form action="http://localhost:5000/result" method="POST">
+                            <div class="field has-addons">
+                                  <p class="control has-icons-left has-icons-right">
+                                    <input class="input is-primary is-rounded" type="text" name="email" placeholder="Email">
+                                    <span class="icon is-small is-left">
+                                      <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <div class="control">
+                                      <button class="button is-primary">Submit</button>
+                                    </div>
+                                  </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
