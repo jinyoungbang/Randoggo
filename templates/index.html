@@ -26,12 +26,30 @@
                     <h1 class="title center">
                         Subscribe!
                     </h1>
-                    <p class="subtitle">
-                        <form class="center" action="http://localhost:5000/result" method="POST">
-                            <input type="text" name="email">
-                            <input type="submit">
+                    <div class="columns">
+                        <div class="column"></div>
+                        <div class="column">
+                            <div class="notification is-primary is-size-5">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                        </div>
+                        <div class="column"></div>
+                    </div>
+                    <div class="container center">
+                        <form action="http://localhost:5000/result" method="POST">
+                            <div class="field has-addons">
+                                  <p class="control has-icons-left has-icons-right">
+                                    <input class="input is-primary is-rounded" type="text" name="email" placeholder="Email">
+                                    <span class="icon is-small is-left">
+                                      <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <div class="control">
+                                      <button class="button is-primary">Submit</button>
+                                    </div>
+                                  </p>
+                            </div>
                         </form>
-                    </p>
+                    </div>
                 </div>
             </div>
         </section>
