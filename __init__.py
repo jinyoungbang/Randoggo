@@ -84,8 +84,7 @@ def unsubscribe():
 		# Return should render_template with like "unsubscribing html page"
 		return email
 	else:
-		print("Email does not exist in the database")
-		return ("Email doesn't exist.")
+		return render_template('invalid-unsubscribe.html')
 
 if __name__ == '__main__':
    app.run(debug=True)
