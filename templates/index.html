@@ -21,7 +21,8 @@
             <div class="hero-body">
                 <div class="container">
                     <figure class="image center">
-                        <img src="images/dog.svg" style="max-width: 128px;">
+                        <!-- Keep this format consistent for images on Flask webapp -->
+                        <img src="{{url_for('static', filename='dog.svg')}}" style="max-width: 128px;">
                     </figure>
                     <h1 class="title center">
                         Subscribe!
