@@ -3,19 +3,18 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Welcome!</title>
+        <title>Randoggo</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         <style>
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         </style>
     </head>
+    
     <body>
         <section class="hero is-fullheight has-background-white">
             <div class="hero-body">
@@ -23,7 +22,7 @@
                     <div class="notification is-danger">
                         <button class="delete"></button>
                         <p class="center">
-                            Invalid format or email already exists. Subscribe again!
+                            Uh oh... Invalid format or email already exists - Try again!
                         </p>
                     </div>
                     <figure class="image center">
@@ -36,7 +35,7 @@
                         <div class="column"></div>
                         <div class="column">
                             <div class="notification is-primary is-size-5">
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Put in your email to receive weekly dosage of doggos and have a great start to your day!
                             </div>
                         </div>
                         <div class="column"></div>
@@ -69,4 +68,17 @@
             </footer>
         </section>
     </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+            $notification = $delete.parentNode;
+            $delete.addEventListener('click', () => {
+            $notification.parentNode.removeChild($notification);
+            });
+        });
+        });
+    </script>
 </html>
+
+
