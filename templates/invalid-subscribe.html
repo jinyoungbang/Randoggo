@@ -14,7 +14,6 @@
             }
         </style>
     </head>
-    
     <body>
         <section class="hero is-fullheight has-background-white">
             <div class="hero-body">
@@ -22,20 +21,20 @@
                     <div class="notification is-danger">
                         <button class="delete"></button>
                         <p class="center">
-                            Uh oh... Invalid format or email already exists - Try again!
+                            Uh oh... Invalid format or email does not exist - Try again!
                         </p>
                     </div>
                     <figure class="image center">
                         <img src="{{url_for('static', filename='dog.svg')}}" style="max-width: 128px;">
                     </figure>
                     <h1 class="title center">
-                        Subscribe!
+                        Unsubscribe to Randoggo
                     </h1>
                     <div class="columns">
                         <div class="column"></div>
                         <div class="column">
                             <div class="notification is-primary is-size-5">
-                                Put in your email to receive weekly dosage of doggos and have a great start to your day!
+                                We're sorry to hear you go away from Randoggo - feel free to try this again anytime!
                             </div>
                         </div>
                         <div class="column"></div>
@@ -44,7 +43,7 @@
                         <form action="/result" method="POST">
                             <div class="field has-addons">
                                   <p class="control has-icons-left has-icons-right">
-                                    <input class="input is-primary is-rounded" type="text" name="email" placeholder="Email">
+                                    <input class="input is-primary is-rounded" type="text" name="unsubscribe-email" placeholder="Email">
                                     <span class="icon is-small is-left">
                                       <i class="fas fa-envelope"></i>
                                     </span>
