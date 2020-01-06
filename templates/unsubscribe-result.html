@@ -25,27 +25,27 @@
                         <img src="{{url_for('static', filename='dog.svg')}}" style="max-width: 128px;">
                     </figure>
                     <h1 class="title center">
-                        Subscribe!
+                        Success!
                     </h1>
                     <div class="columns">
                         <div class="column"></div>
                         <div class="column">
-                            <div class="notification is-primary is-size-5">
-                                Put in your email to receive weekly dosage of doggos and have a great start to your day!
+                            <div class="notification is-primary is-size-5 is-centered" style="text-align: center">
+                                Your email has been removed from our database!
                             </div>
                         </div>
                         <div class="column"></div>
                     </div>
                     <div class="container center">
-                        <form action="/subscribe-result" method="POST">
+                        <form action="http://localhost:5000/result" method="POST">
                             <div class="field has-addons">
                                   <p class="control has-icons-left has-icons-right">
-                                    <input class="input is-primary is-rounded" type="text" name="email" placeholder="Email">
+                                    <input class="input is-primary is-rounded" type="text" name="email" placeholder="Email" disabled>
                                     <span class="icon is-small is-left">
                                       <i class="fas fa-envelope"></i>
                                     </span>
                                     <div class="control">
-                                      <button class="button is-primary">Subscribe</button>
+                                      <button class="button is-primary" disabled>Success</button>
                                     </div>
                                   </p>
                             </div>
@@ -56,6 +56,7 @@
             <footer class="footer">
               <div class="content has-text-centered">
                 <p>
+
                   <strong>Randdoggo</strong> by <a href="https://github.com/jinyoungbang">Jinyoung Bang</a>.
                 </p>
                 <p>
@@ -64,6 +65,7 @@
                 The source code is licensed
                 <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
                 is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+
               </div>
             </footer>
         </section>
