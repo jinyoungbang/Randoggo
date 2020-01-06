@@ -1,83 +1,83 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Randoggo</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-      <style>
-          .center {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-          }
-      </style>
-  </head>
-
-  <body>
-      <section class="hero is-fullheight has-background-white">
-          <div class="hero-body">
-              <div class="container">
-                  <div class="notification is-danger">
-                      <button class="delete"></button>
-                      <p class="center">
-                          Uh oh... Invalid format or email does not exist - Try again!
-                      </p>
-                  </div>
-                  <figure class="image center">
-                      <img src="{{url_for('static', filename='dog.svg')}}" style="max-width: 128px;">
-                  </figure>
-                  <h1 class="title center">
-                      Unsubscribe to Randoggo
-                  </h1>
-                  <div class="columns">
-                      <div class="column"></div>
-                      <div class="column">
-                          <div class="notification is-primary is-size-5">
-                              We're sorry to hear you go away from Randoggo - feel free to try this again anytime!
-                          </div>
-                      </div>
-                      <div class="column"></div>
-                  </div>
-                  <div class="container center">
-                      <form action="http://localhost:5000/unsubscribe/result" method="POST">
-                          <div class="field has-addons">
-                                <p class="control has-icons-left has-icons-right">
-                                  <input class="input is-primary is-rounded" type="text" name="unsubscribe-email" placeholder="Email">
-                                  <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                  </span>
-                                  <div class="control">
-                                    <button class="button is-primary">Submit</button>
-                                  </div>
-                                </p>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-          <footer class="footer">
-            <div class="content has-text-centered">
-              <p>
-                <strong>Randdoggo</strong> by <a href="https://github.com/jinyoungbang">Jinyoung Bang</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-              </p>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Randoggo</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <style>
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <section class="hero is-fullheight has-background-white">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="notification is-danger">
+                        <button class="delete"></button>
+                        <p class="center">
+                            Uh oh... Invalid format or email does not exist - Try again!
+                        </p>
+                    </div>
+                    <figure class="image center">
+                        <img src="{{url_for('static', filename='dog.svg')}}" style="max-width: 128px;">
+                    </figure>
+                    <h1 class="title center">
+                        Unsubscribe to Randoggo
+                    </h1>
+                    <div class="columns">
+                        <div class="column"></div>
+                        <div class="column">
+                            <div class="notification is-primary is-size-5">
+                                We're sorry to hear you go away from Randoggo - feel free to try this again anytime!
+                            </div>
+                        </div>
+                        <div class="column"></div>
+                    </div>
+                    <div class="container center">
+                        <form action="http://localhost:5000/unsubscribe/result" method="POST">
+                            <div class="field has-addons">
+                                  <p class="control has-icons-left has-icons-right">
+                                    <input class="input is-primary is-rounded" type="text" name="unsubscribe-email" placeholder="Email">
+                                    <span class="icon is-small is-left">
+                                      <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <div class="control">
+                                      <button class="button is-primary">Submit</button>
+                                    </div>
+                                  </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </footer>
-      </section>
-  </body>
+            <footer class="footer">
+              <div class="content has-text-centered">
+                <p>
+                  <strong>Randdoggo</strong> by <a href="https://github.com/jinyoungbang">Jinyoung Bang</a>. The source code is licensed
+                  <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                  is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                </p>
+              </div>
+            </footer>
+        </section>
+    </body>
 
-  <script>
-      document.addEventListener('DOMContentLoaded', () => {
-      (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-          $notification = $delete.parentNode;
-          $delete.addEventListener('click', () => {
-          $notification.parentNode.removeChild($notification);
-          });
-      });
-      });
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+            $notification = $delete.parentNode;
+            $delete.addEventListener('click', () => {
+            $notification.parentNode.removeChild($notification);
+            });
+        });
+        });
+    </script>
 </html>
