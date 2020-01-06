@@ -31,6 +31,7 @@ def check(email):
 def home():
     return render_template('index.html')
 
+
 @app.route('/result', methods=['POST'])
 def subscribe():
 	email = request.form['email']
@@ -57,7 +58,7 @@ def subscribe():
 		print(x)
 
 		# Return should render_template with like "Thank you for subscribing html page"
-		return email
+		return render_template('subscribe-result.html')
 
 @app.route('/unsubscribe', methods=['GET', 'POST'])
 def unsubscribe_home():
@@ -82,7 +83,7 @@ def unsubscribe():
 		x = collection.delete_one(delete)
 		print(x)
 		# Return should render_template with like "unsubscribing html page"
-		return email
+		return render_template('unsubscribe-result.html')
 	else:
 		return render_template('invalid-unsubscribe.html')
 

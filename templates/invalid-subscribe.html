@@ -28,27 +28,27 @@
                         <img src="{{url_for('static', filename='dog.svg')}}" style="max-width: 128px;">
                     </figure>
                     <h1 class="title center">
-                        Unsubscribe to Randoggo
+                        Subscribe!
                     </h1>
                     <div class="columns">
                         <div class="column"></div>
                         <div class="column">
                             <div class="notification is-primary is-size-5">
-                                We're sorry to hear you go away from Randoggo - feel free to try this again anytime!
+                                Put in your email to receive weekly dosage of doggos and have a great start to your day!
                             </div>
                         </div>
                         <div class="column"></div>
                     </div>
                     <div class="container center">
-                        <form action="/subscribe-result" method="POST">
+                        <form action="/result" method="POST">
                             <div class="field has-addons">
                                   <p class="control has-icons-left has-icons-right">
-                                    <input class="input is-primary is-rounded" type="text" name="unsubscribe-email" placeholder="Email">
+                                    <input class="input is-primary is-rounded" type="text" name="email" placeholder="Email">
                                     <span class="icon is-small is-left">
                                       <i class="fas fa-envelope"></i>
                                     </span>
                                     <div class="control">
-                                      <button class="button is-primary">Submit</button>
+                                      <button class="button is-primary">Subscribe</button>
                                     </div>
                                   </p>
                             </div>
