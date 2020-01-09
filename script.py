@@ -9,7 +9,7 @@ import ssl
 import time
 from email.message import EmailMessage
 
-for trial in range(3):
+while True:
     EMAIL_ADDRESS = config.EMAIL_ADDRESS
     EMAIL_PASSWORD = config.EMAIL_PASSWORD
     GIPHY_API_KEY = config.GIPHY_API_KEY
@@ -48,6 +48,8 @@ for trial in range(3):
 
     for c in collection.find():
         emails_to_send.append(c["email"])
+    
+    print(emails_to_send)
 
     for email in emails_to_send:
         msg = EmailMessage()
@@ -414,6 +416,8 @@ for trial in range(3):
                                 <tr>
                                 <td class="content-block">
                                     <span class="apple-link">Made with some coffee and love of doggos!</span>
+                                    <br>
+                                    <span class="apple-link">Click <a href="https://randoggo.herokuapp.com/unsubscribe"> <u>here</u> </a>to unsubscribe.</span>
                                 </td>
                                 </tr>
                                 <tr>
@@ -441,4 +445,4 @@ for trial in range(3):
             smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
             smtp.send_message(msg)
         print("Email sent to " + email + "!")
-    time.sleep(60)
+    time.sleep(86400)
