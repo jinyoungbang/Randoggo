@@ -398,8 +398,8 @@ for email in emails_to_send:
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <p>Know that you're doing such a heckin amazin job!</p>
-                                    <p>Have a floofin amazing day :)</p>
+                                    <p>Make sure to practice social distancing and wash your hands frequently!</p>
+                                    <p>Stay safe and have a floofin amazing day :)</p>
                                 </td>
                                 </tr>
                             </table>
